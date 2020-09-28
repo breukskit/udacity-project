@@ -1,0 +1,20 @@
+@import "burger-menu-model";
+
+.careers-wrapper {
+  @extend .model-wrapper;
+  .careers-list {
+    @extend .model-list;
+    .careers-navigator {
+      @extend .model-navigator;
+      a {
+        @extend .model-a;
+        span {
+          @extend .model-span;
+        }
+      }
+    }
+    .careers-list-item {
+      @extend .model-list-item;
+    }
+  }
+}

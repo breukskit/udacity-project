@@ -18,6 +18,16 @@ export const PROGRAMMING_AND_DEVELOPMENT = [
   'Cloud Developer',
 ];
 
+export const PROGRAMMING = [
+  'Programming and development',
+  'Artificial intelligence',
+  'Cloud computing',
+  'Data science',
+  'Business',
+  'Autonomous systems',
+  'Career',
+];
+
 export const CAREERS = [
   'career prep',
   'student success',

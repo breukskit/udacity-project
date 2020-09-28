@@ -31,7 +31,6 @@ export class NavComponent implements OnInit, OnDestroy {
   toggleBurgerSidenav() {
     this.showBurgerSidenav = !this.showBurgerSidenav;
   }
-
   toggleProgramsDropDown() {
     this.showCareersDropdown = false;
     this.showEnterpriseDropdown = false;

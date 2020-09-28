@@ -1,15 +1,22 @@
 @import "~src/sass/utilities.scss";
-
-$menu-text-color: #525c65;
-$menuItem-hover-color: #017a9b;
+@import "src/sass/variables.scss";
 
 .nav {
   height: 96px;
+  position: relative;
   @media (max-width: 767px) {
     height: 72px;
   }
   @import "fullsize-nav";
   @import "mobile-nav";
+  .hamburger-sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
 }
 
 .dropdown-ul {

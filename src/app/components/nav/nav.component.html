@@ -114,11 +114,9 @@
     </div>
     <div class="dummy-container"></div>
   </div>
-</nav>
-
-<div *ngIf="showBurgerSidenav" class="hamburger-sidenav">
-  <div (click)="toggleBurgerSidenav()" class="burger-sidenav-close">
-    &times;
+  <div *ngIf="showBurgerSidenav" class="hamburger-sidenav">
+    <app-burger-sidenav
+      (closeEvent)="toggleBurgerSidenav()"
+    ></app-burger-sidenav>
   </div>
-  i am hamburgerSidenav
-</div>
+</nav>

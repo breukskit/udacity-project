@@ -1,0 +1,21 @@
+@import "burger-menu-model.scss";
+
+.enterprise-wrapper {
+  @extend .model-wrapper;
+  .enterprise-list {
+    @extend .model-list;
+    .enterprise-navigator {
+      @extend .model-navigator;
+      a {
+        @extend .model-a;
+
+        span {
+          @extend .model-span;
+        }
+      }
+    }
+    .enterprise-list-item {
+      @extend .model-list-item;
+    }
+  }
+}

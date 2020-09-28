@@ -1,0 +1,26 @@
+.model-wrapper {
+  .model-list {
+    .model-navigator {
+      padding: 1.5rem 0rem 1.5rem 1.5rem;
+      .model-a {
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        &:hover {
+          color: #c9c9c9;
+        }
+        .model-span {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+    .model-list-item {
+      color: #ffffff;
+      padding: 1.5rem 0rem 1.5rem 1.5rem;
+      font-weight: 600;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
