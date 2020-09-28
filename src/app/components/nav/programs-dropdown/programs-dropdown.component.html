@@ -1,10 +1,44 @@
 <ul class="programming-list">
-  <li>programming and development</li>
-  <li>artificial intelligence</li>
-  <li>cloud computing</li>
-  <li>data science</li>
-  <li>business</li>
-  <li>autonomous systems</li>
-  <li>career</li>
+  <li (mouseover)="over('item-1')" (mouseout)="out()" class="item item-1">
+    programming and development
+  </li>
+  <li (mouseover)="over('item-2')" (mouseout)="out()" class="item item-2">
+    artificial intelligence
+  </li>
+  <li class="item item-3">cloud computing</li>
+  <li class="item item-4">data science</li>
+  <li class="item item-5">business</li>
+  <li class="item item-6">autonomous systems</li>
+  <li class="item item-7">career</li>
 </ul>
-<!-- <div (click)="closeMenu()" class="overlay"></div> -->
+
+<div
+  (mouseover)="over('item-1')"
+  (mouseout)="out()"
+  *ngIf="menuTarget === 'item-1'"
+  class="item-1-sidecontent"
+>
+  <ul class="sidecontent-list">
+    <li class="sidecontent-header">nanodegree programs</li>
+    <li *ngFor="let program of programs" class="sidecontent-list-item">
+      {{ program }}
+    </li>
+  </ul>
+</div>
+
+<div
+  (mouseover)="over('item-2')"
+  (mouseout)="out()"
+  *ngIf="menuTarget === 'item-2'"
+  class="item-2-sidecontent"
+>
+  <ul class="sidecontent-list">
+    <li class="sidecontent-header">nanodegree programs</li>
+    <li
+      *ngFor="let item of artificialIntelligence"
+      class="sidecontent-list-item"
+    >
+      {{ item }}
+    </li>
+  </ul>
+</div>

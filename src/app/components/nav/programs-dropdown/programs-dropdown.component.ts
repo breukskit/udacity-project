@@ -1,4 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PROGRAMMING_AND_DEVELOPMENT, ARTIFICIAL_INTELLIGENCE } from '../menus';
 
 @Component({
   selector: 'app-programs-dropdown',
@@ -6,13 +7,18 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./programs-dropdown.component.scss'],
 })
 export class ProgramsDropdownComponent implements OnInit {
-  // @Output() closeEvent = new EventEmitter();
-
+  menuTarget = '';
   constructor() {}
 
-  ngOnInit(): void {}
+  over(target: string) {
+    this.menuTarget = target;
+  }
+  out() {
+    this.menuTarget = '';
+  }
 
-  // closeMenu() {
-  //   this.closeEvent.emit();
-  // }
+  programs = PROGRAMMING_AND_DEVELOPMENT;
+  artificialIntelligence = ARTIFICIAL_INTELLIGENCE;
+
+  ngOnInit(): void {}
 }

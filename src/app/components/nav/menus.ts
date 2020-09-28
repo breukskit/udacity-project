@@ -18,6 +18,24 @@ export const PROGRAMMING_AND_DEVELOPMENT = [
   'Cloud Developer',
 ];
 
+export const ARTIFICIAL_INTELLIGENCE = [
+  'AI for Healthcare',
+  'Intel Edge AI for IoT Developers',
+  'Machine Learning Engineer',
+  'AI Product Manager',
+  'AI Programming with Python',
+  'Deep Learning',
+  'Intro to Machine Learning with PyTorch',
+  'Intro to Machine Learning with TensorFlow',
+  'Data Structures and Algorithms',
+  'Artificial Intelligence for Trading',
+  'Computer Vision',
+  'Natural Language Processing',
+  'Deep Reinforcement Learning',
+  'Artificial Intelligence',
+  'AI for Business Leaders',
+];
+
 export const PROGRAMMING = [
   'Programming and development',
   'Artificial intelligence',
