@@ -1,50 +1,42 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-
-const PROGRAMMING_AND_DEVELOPMENT = [
-  'RPA Developer with UiPath',
-  'Agile Software Development',
-  'Introduction to Cybersecurity',
-  'Intermediate JavaScript',
-  'Java Web Developer',
-  'Introduction to Programming',
-  'iOS Developer',
-  'Full Stack Web Developer',
-  'React',
-  'Data Engineer',
-  'Blockchain Developer',
-  'C++',
-  'Data Structures and Algorithms',
-  'Android Developer',
-  'Android Basics',
-  'AWS Cloud Architect',
-  'Cloud Developer',
-];
-
-interface IMenu {
-  name: string;
-  isVisible: boolean;
-}
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  faBars,
+  faChevronDown,
+  faChevronUp,
+} from '@fortawesome/free-solid-svg-icons';
+import { PROGRAMMING_AND_DEVELOPMENT, CAREERS, ENTERPRISE } from './menus';
+import { Store, select } from '@ngrx/store';
+import { State } from '../../../store/reducers';
+import { selectSize } from '../../../store/selectors';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, OnDestroy {
   faChevronDown = faChevronDown;
   faChevronUp = faChevronUp;
+  faBars = faBars;
 
   showProgramsDropdown = false;
   showCareersDropdown = false;
   showEnterpriseDropdown = false;
+  showBurgerSidenav = false;
+
+  viewport$: Observable<string>;
+  viewport;
+
+  toggleBurgerSidenav() {
+    this.showBurgerSidenav = !this.showBurgerSidenav;
+  }
 
   toggleProgramsDropDown() {
     this.showCareersDropdown = false;
     this.showEnterpriseDropdown = false;
     this.showProgramsDropdown = !this.showProgramsDropdown;
   }
-
   toggleCareersDropDown() {
     this.showProgramsDropdown = false;
     this.showEnterpriseDropdown = false;
@@ -55,14 +47,17 @@ export class NavComponent implements OnInit {
     this.showCareersDropdown = false;
     this.showEnterpriseDropdown = !this.showEnterpriseDropdown;
   }
-  closeDropdowns() {
-    this.showProgramsDropdown = false;
-    this.showCareersDropdown = false;
-    this.showEnterpriseDropdown = false;
-  }
-  constructor() {}
+  constructor(private store: Store<State>) {}
 
   programmingAndDevelopment = PROGRAMMING_AND_DEVELOPMENT;
+  careers = CAREERS;
+  enterprises = ENTERPRISE;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.viewport$ = this.store.pipe(select(selectSize));
+    this.viewport$.subscribe((value) => (this.viewport = value));
+  }
+  ngOnDestroy(): void {
+    this.viewport$.subscribe().unsubscribe();
+  }
 }

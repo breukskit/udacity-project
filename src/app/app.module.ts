@@ -13,7 +13,8 @@ import { ViewportComponent } from './components/viewport/viewport.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProgramsDropdownComponent } from './components/nav/programs-dropdown/programs-dropdown.component';
-import { MaterialModule } from './material/material.module';
+import { BurgerSidenavComponent } from './components/nav/burger-sidenav/burger-sidenav.component';
+// import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MaterialModule } from './material/material.module';
     ViewportComponent,
     NavComponent,
     ProgramsDropdownComponent,
+    BurgerSidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,6 @@ import { MaterialModule } from './material/material.module';
       logOnly: environment.production,
     }),
     FontAwesomeModule,
-    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

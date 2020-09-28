@@ -1,67 +1,34 @@
 @import "~src/sass/utilities.scss";
 
+$menu-text-color: #525c65;
+$menuItem-hover-color: #017a9b;
+
 .nav {
   height: 96px;
-  .fullsize-nav {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .sidenav {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      .sidenav-list {
-        height: 100%;
-        display: flex;
-        .sidenav-list-item {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          // align-items: center;
-          justify-content: center;
-          padding: 0rem 1rem;
-          a {
-            color: #525c65;
-          }
-          span {
-            padding-left: 0.5rem;
-          }
-          .dropdown-container {
-            position: absolute;
-            z-index: 2;
-          }
-        }
-      }
-      .sidenav-buttons {
-        height: fit-content;
-        border-left: 1px solid rgba(0, 0, 0, 0.15);
-        a {
-          padding: 0rem 1rem;
-        }
-      }
-    }
+  @media (max-width: 767px) {
+    height: 72px;
   }
+  @import "fullsize-nav";
+  @import "mobile-nav";
 }
 
 .dropdown-ul {
   background-color: #e5eff5;
   padding: 2rem 1rem;
-  li {
+
+  .dropdown-li {
     padding: 0.5rem 2rem;
     text-transform: uppercase;
     white-space: nowrap;
+    color: $menu-text-color;
+    &:hover {
+      cursor: pointer;
+      color: $menuItem-hover-color;
+    }
   }
 }
 
 .active-link {
   padding: 0.5rem;
   background-color: #e5eff5;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
 }
