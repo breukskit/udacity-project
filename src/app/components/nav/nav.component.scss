@@ -3,7 +3,8 @@
 
 .nav {
   height: 96px;
-  position: relative;
+  width: 100%;
+  position: fixed;
   @media (max-width: 767px) {
     height: 72px;
   }

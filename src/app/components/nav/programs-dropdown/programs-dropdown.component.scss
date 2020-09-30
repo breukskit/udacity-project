@@ -1,5 +1,11 @@
 @import "~src/sass/variables.scss";
 
+@for $x from 0 through 5 {
+  .item-#{$x}-sidecontent {
+    display: none;
+  }
+}
+
 .programming-list {
   background-color: #e5eff5;
   padding: 2rem 0rem 1rem 0rem;
@@ -14,18 +20,43 @@
       color: $menuItem-hover-color;
     }
   }
-  .item-1 {
+}
+
+@for $i from 0 through 5 {
+  $ratio: $i * 60px;
+  @if $i > 2 {
+    $ratio: 44px + $i * 38px;
+  }
+  .item-#{$i} {
     position: relative;
     display: flex;
-    .sidecontent-list {
-      background-color: rgba(0, 0, 0, 0.15);
-      padding: 2rem;
+    &:hover {
+      .item-#{$i}-sidecontent {
+        display: block;
+        position: absolute;
+        top: -32px - $ratio;
+        left: 220px;
+      }
     }
   }
 }
 
-.item-1-sidecontent {
-  position: absolute;
-  top: 0;
-  left: 220px;
+.sidecontent {
+  width: 20rem;
+  box-shadow: 8px 8px 20px -8px rgba(0, 0, 0, 0.5);
+  .sidecontent-list {
+    padding-top: 2rem;
+    .sidecontent-header {
+      font-weight: 600;
+      color: #525c65;
+      padding: 0.5rem 2rem;
+    }
+    .sidecontent-list-item {
+      padding: 0.5rem 2rem;
+      color: #525c65;
+      &:hover {
+        color: $menuItem-hover-color;
+      }
+    }
+  }
 }

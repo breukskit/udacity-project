@@ -1,44 +1,75 @@
 <ul class="programming-list">
-  <li (mouseover)="over('item-1')" (mouseout)="out()" class="item item-1">
-    programming and development
+  <li class="item item-0">
+    <span>programming and development</span>
+    <div class="sidecontent item-0-sidecontent">
+      <ul class="sidecontent-list">
+        <li class="sidecontent-header">nanodegree programs</li>
+        <li *ngFor="let program of programs" class="sidecontent-list-item">
+          {{ program }}
+        </li>
+      </ul>
+    </div>
   </li>
-  <li (mouseover)="over('item-2')" (mouseout)="out()" class="item item-2">
-    artificial intelligence
+  <li class="item item-1">
+    <span>artificial intelligence</span>
+    <div class="sidecontent item-1-sidecontent">
+      <ul class="sidecontent-list">
+        <li class="sidecontent-header">nanodegree programs</li>
+        <li
+          *ngFor="let item of artificialIntelligence"
+          class="sidecontent-list-item"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
   </li>
-  <li class="item item-3">cloud computing</li>
-  <li class="item item-4">data science</li>
-  <li class="item item-5">business</li>
-  <li class="item item-6">autonomous systems</li>
-  <li class="item item-7">career</li>
+  <li class="item item-2">
+    <span>cloud computing</span>
+    <div class="sidecontent item-2-sidecontent">
+      <ul class="sidecontent-list">
+        <li class="sidecontent-header">nanodegree programs</li>
+        <li *ngFor="let item of cloudComputing" class="sidecontent-list-item">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="item item-3">
+    <span>data science</span>
+    <div class="sidecontent item-3-sidecontent">
+      <ul class="sidecontent-list">
+        <li class="sidecontent-header">nanodegree programs</li>
+        <li *ngFor="let item of dataScience" class="sidecontent-list-item">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="item item-4">
+    <span>business</span>
+    <div class="sidecontent item-4-sidecontent">
+      <ul class="sidecontent-list">
+        <li class="sidecontent-header">nanodegree programs</li>
+        <li *ngFor="let item of business" class="sidecontent-list-item">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="item item-5">
+    <span>autonomous systems</span>
+    <div class="sidecontent item-5-sidecontent">
+      <ul class="sidecontent-list">
+        <li class="sidecontent-header">nanodegree programs</li>
+        <li
+          *ngFor="let item of autonomousSystems"
+          class="sidecontent-list-item"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="item item-6"><span>career</span></li>
 </ul>
-
-<div
-  (mouseover)="over('item-1')"
-  (mouseout)="out()"
-  *ngIf="menuTarget === 'item-1'"
-  class="item-1-sidecontent"
->
-  <ul class="sidecontent-list">
-    <li class="sidecontent-header">nanodegree programs</li>
-    <li *ngFor="let program of programs" class="sidecontent-list-item">
-      {{ program }}
-    </li>
-  </ul>
-</div>
-
-<div
-  (mouseover)="over('item-2')"
-  (mouseout)="out()"
-  *ngIf="menuTarget === 'item-2'"
-  class="item-2-sidecontent"
->
-  <ul class="sidecontent-list">
-    <li class="sidecontent-header">nanodegree programs</li>
-    <li
-      *ngFor="let item of artificialIntelligence"
-      class="sidecontent-list-item"
-    >
-      {{ item }}
-    </li>
-  </ul>
-</div>
