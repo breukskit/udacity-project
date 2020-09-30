@@ -14,12 +14,12 @@ export class ViewportService {
   }
   smallViewport() {
     return this.breakpointObserver.observe(
-      '(min-width: 576px) and (max-width: 767px)'
+      '(min-width: 576px) and (max-width: 766px)'
     );
   }
   mediumViewport() {
     return this.breakpointObserver.observe(
-      '(min-width: 768px) and (max-width: 991px)'
+      '(min-width: 767px) and (max-width: 991px)'
     );
   }
   largeViewport() {

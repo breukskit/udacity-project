@@ -25,7 +25,10 @@
 @for $i from 0 through 5 {
   $ratio: $i * 60px;
   @if $i > 2 {
-    $ratio: 44px + $i * 38px;
+    $ratio: 20px + $i * 38px;
+  }
+  @if $i == 2 {
+    $ratio: 22px + $i * 38px;
   }
   .item-#{$i} {
     position: relative;
@@ -35,7 +38,7 @@
         display: block;
         position: absolute;
         top: -32px - $ratio;
-        left: 220px;
+        left: 320px;
       }
     }
   }
@@ -45,6 +48,7 @@
   width: 20rem;
   box-shadow: 8px 8px 20px -8px rgba(0, 0, 0, 0.5);
   padding-bottom: 1rem;
+  background: #ffffff;
   .sidecontent-list {
     padding-top: 2rem;
     .sidecontent-header {

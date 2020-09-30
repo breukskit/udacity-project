@@ -15,7 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProgramsDropdownComponent } from './components/nav/programs-dropdown/programs-dropdown.component';
 import { BurgerSidenavComponent } from './components/nav/burger-sidenav/burger-sidenav.component';
 import { MainComponent } from './components/main/main.component';
-// import { MaterialModule } from './material/material.module';
+import { HeaderComponent } from './components/main/header/header.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { MainComponent } from './components/main/main.component';
     ProgramsDropdownComponent,
     BurgerSidenavComponent,
     MainComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

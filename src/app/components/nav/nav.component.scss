@@ -5,8 +5,12 @@
   height: 96px;
   width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
   z-index: 9;
-  @media (max-width: 767px) {
+  // box-shadow: 5px 11px 50px -25px rgba(0, 0, 0, 0.5);
+  @media (max-width: 766px) {
     height: 72px;
   }
   @import "fullsize-nav";
@@ -26,11 +30,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 320px;
   .dropdown-ul {
-    padding: 2rem 1rem;
-
+    padding: 2rem 0rem 1rem 0rem;
+    width: 100%;
     .dropdown-li {
       padding: 0.5rem 2rem;
+      font-size: 1rem;
       text-transform: uppercase;
       white-space: nowrap;
       color: $menu-text-color;

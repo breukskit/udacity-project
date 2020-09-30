@@ -1,0 +1,129 @@
+@import "~src/sass/variables.scss";
+@import "~src/sass/utilities.scss";
+
+$table-gray: #6d7780;
+
+.hero {
+  margin: 96px auto 0px auto;
+  @media (max-width: 766px) {
+    margin: 72px auto 0px auto;
+  }
+  max-width: 1180px;
+  min-height: 375px;
+  padding: 1.5rem 0rem;
+  display: flex;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    padding: 0;
+  }
+  .header-left {
+    background: center / cover no-repeat
+      url("../../../../assets/HomepageBanner_tablet.jpg");
+    flex: 6;
+    padding: 1.5rem;
+    color: #ffffff;
+    @media (max-width: 766px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px;
+    }
+    h1 {
+      margin-bottom: 1.5rem;
+      font-size: 24px;
+      @media (max-width: 766px) {
+        text-align: center;
+      }
+    }
+    .p-one {
+      margin-bottom: 1.5rem;
+      font-size: 15px;
+      @media (max-width: 766px) {
+        text-align: center;
+      }
+    }
+    .hero-btn {
+      padding: 1rem 2.9rem;
+      letter-spacing: 0.1rem;
+    }
+    .p-two {
+      margin-top: 1.5rem;
+      font-size: 15px;
+      margin-bottom: 1.5rem;
+    }
+    .images {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 1.75rem;
+      }
+    }
+  }
+  .header-right {
+    flex: 4;
+    @media (max-width: 991px) {
+      padding: 1.5rem 40px;
+    }
+    @media (max-width: 575px) {
+      padding: 1.5rem 1rem;
+    }
+    h2 {
+      font-size: 26px;
+      font-weight: 400;
+      color: $menu-text-color;
+      text-align: center;
+      margin-bottom: 11px;
+      @media (max-width: 766px) {
+        font-size: 20px;
+      }
+    }
+    .hero-table {
+      border-collapse: collapse;
+      width: 100%;
+      th {
+        text-align: center;
+        border: 2px solid #ffffff;
+      }
+      td {
+        border: 2px solid #ffffff;
+        color: $menu-text-color;
+        text-align: left;
+      }
+      th {
+        color: #ffffff;
+        height: 40px;
+        text-transform: uppercase;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        @media (max-width: 766px) {
+          height: 33px;
+        }
+      }
+      tr {
+        height: 44px;
+        background: #f5fcfe;
+        font-size: 1rem;
+        @media (max-width: 766px) {
+          height: 33px;
+          font-size: 12px;
+        }
+      }
+      .text {
+        padding-left: 20px;
+      }
+      .blue {
+        background-color: $btn-bg;
+        text-align: center;
+      }
+      .gray {
+        background-color: $table-gray;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.logo {
+  height: 44px;
+}
