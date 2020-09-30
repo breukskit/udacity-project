@@ -14,6 +14,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProgramsDropdownComponent } from './components/nav/programs-dropdown/programs-dropdown.component';
 import { BurgerSidenavComponent } from './components/nav/burger-sidenav/burger-sidenav.component';
+import { MainComponent } from './components/main/main.component';
 // import { MaterialModule } from './material/material.module';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { BurgerSidenavComponent } from './components/nav/burger-sidenav/burger-s
     NavComponent,
     ProgramsDropdownComponent,
     BurgerSidenavComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,

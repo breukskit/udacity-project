@@ -1,3 +1,5 @@
+@import "variables";
+
 $spacer: 1rem;
 
 .m-1 {
@@ -11,6 +13,23 @@ $spacer: 1rem;
 }
 .m-4 {
   margin: $spacer * 1.5;
+}
+
+.my-1 {
+  margin-top: $spacer * 0.25;
+  margin-bottom: $spacer * 0.25;
+}
+.my-2 {
+  margin-top: $spacer * 0.5;
+  margin-bottom: $spacer * 0.5;
+}
+.my-3 {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+.my-4 {
+  margin-top: $spacer * 1.5;
+  margin-bottom: $spacer * 1.5;
 }
 
 .p-1 {
@@ -41,4 +60,22 @@ $spacer: 1rem;
 .px-4 {
   padding-left: $spacer * 1.5;
   padding-right: $spacer * 1.5;
+}
+
+.btn {
+  padding: 0.75rem 2.5rem;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.09375rem;
+  color: #ffffff;
+  border-radius: 5px;
+  background: $btn-bg;
+  box-shadow: 0 0 8px 0 rgba(17, 22, 26, 0.16),
+    0 4px 8px 0 rgba(17, 22, 26, 0.08), 0 8px 16px 0 rgba(17, 22, 26, 0.08);
+  &:hover {
+    cursor: pointer;
+    background-color: darken($btn-bg, 5%);
+  }
 }

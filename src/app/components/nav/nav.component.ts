@@ -46,6 +46,12 @@ export class NavComponent implements OnInit, OnDestroy {
     this.showCareersDropdown = false;
     this.showEnterpriseDropdown = !this.showEnterpriseDropdown;
   }
+  closeMenus() {
+    this.showProgramsDropdown = false;
+    this.showCareersDropdown = false;
+    this.showEnterpriseDropdown = false;
+    this.showBurgerSidenav = false;
+  }
   constructor(private store: Store<State>) {}
 
   programmingAndDevelopment = PROGRAMMING_AND_DEVELOPMENT;

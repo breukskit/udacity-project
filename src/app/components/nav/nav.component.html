@@ -17,12 +17,13 @@
     </svg>
     <div class="sidenav">
       <ul class="sidenav-list">
-        <li (click)="toggleProgramsDropDown()" class="sidenav-list-item">
+        <li class="sidenav-list-item">
           <div
             class="sidenav-container"
             [class.active-link]="showProgramsDropdown"
           >
             <a
+              (click)="toggleProgramsDropDown()"
               [style.color]="showProgramsDropdown ? '#017a9b' : ''"
               href="#"
               class="sidenav-link"
@@ -35,15 +36,18 @@
           <div *ngIf="showProgramsDropdown">
             <div class="dropdown-container">
               <app-programs-dropdown></app-programs-dropdown>
+              <div class="program-dropdown-border"></div>
+              <button class="btn my-4">Full catalog</button>
             </div>
           </div>
         </li>
-        <li (click)="toggleCareersDropDown()" class="sidenav-list-item">
+        <li class="sidenav-list-item">
           <div
             class="sidenav-container"
             [class.active-link]="showCareersDropdown"
           >
             <a
+              (click)="toggleCareersDropDown()"
               [style.color]="showCareersDropdown ? '#017a9b' : ''"
               href="#"
               class="sidenav-link"
@@ -63,12 +67,13 @@
             </div>
           </div>
         </li>
-        <li (click)="toggleEnterpriseDropDown()" class="sidenav-list-item">
+        <li class="sidenav-list-item">
           <div
             class="sidenav-container"
             [class.active-link]="showEnterpriseDropdown"
           >
             <a
+              (click)="toggleEnterpriseDropDown()"
               [style.color]="showEnterpriseDropdown ? '#017a9b' : ''"
               href="#"
               class="sidenav-link"
@@ -90,8 +95,8 @@
         </li>
       </ul>
       <div class="sidenav-buttons">
-        <a href="#">Sign in</a>
-        <button>Get started</button>
+        <a (click)="closeMenus()" href="#">Sign in</a>
+        <button (click)="closeMenus()">Get started</button>
       </div>
     </div>
   </div>
@@ -120,3 +125,14 @@
     ></app-burger-sidenav>
   </div>
 </nav>
+
+<div
+  class="overlay"
+  *ngIf="
+    showCareersDropdown ||
+    showEnterpriseDropdown ||
+    showProgramsDropdown ||
+    showBurgerSidenav
+  "
+  (click)="closeMenus()"
+></div>
