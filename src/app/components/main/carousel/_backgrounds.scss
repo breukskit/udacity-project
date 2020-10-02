@@ -78,3 +78,34 @@
     background-image: url("~src/assets/carousel-img/programming/intro-to-programming.webp");
   }
 }
+@for $i from 1 through 6 {
+  .artificial-intelligence-#{$i} {
+    .card-header {
+      background-image: url("~src/assets/carousel-img/artificial-intelligence/#{$i}.jpg");
+    }
+  }
+}
+
+@for $x from 1 through 6 {
+  .business-#{$x} {
+    .card-header {
+      background-image: url("~src/assets/carousel-img/business/#{$x}.jpg");
+    }
+  }
+}
+
+@for $y from 1 through 6 {
+  .autonomous-vehicles-#{$y} {
+    .card-header {
+      background-image: url("~src/assets/carousel-img/autonomous-vehicles/#{$y}.jpg");
+    }
+  }
+}
+
+@for $z from 1 through 4 {
+  .cloud-computing-#{$z} {
+    .card-header {
+      background-image: url("~src/assets/carousel-img/cloud-computing/#{$z}.jpg");
+    }
+  }
+}

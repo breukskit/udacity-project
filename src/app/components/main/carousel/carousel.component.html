@@ -74,6 +74,7 @@
         </div>
       </div>
     </drag-scroll>
+
     <drag-scroll
       *ngIf="carouselChoice === 'PROGRAMMING'"
       #nav
@@ -127,6 +128,223 @@
         </div>
       </div>
     </drag-scroll>
+
+    <drag-scroll
+      *ngIf="carouselChoice === 'ARTIFICIAL_INTELLIGENCE'"
+      #nav
+      class="drag-scroll"
+    >
+      <div
+        drag-scroll-item
+        *ngFor="let item of artificialIntelligence"
+        class="card"
+        [class]="item.class"
+      >
+        <div class="card-header">
+          <span
+            class="card"
+            [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+            >{{ item.state }}</span
+          >
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ item.title }}</h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                *ngFor="let star of item.stars"
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div
+                [class]="
+                  item.difficulty === 'Beginner'
+                    ? 'bar bar-two empty'
+                    : 'bar bar-two'
+                "
+              ></div>
+              <div
+                [class]="
+                  item.difficulty === 'Advanced'
+                    ? 'bar bar-three'
+                    : 'bar bar-three empty'
+                "
+              ></div> </span
+            ><span class="difficulty">{{ item.difficulty }}</span>
+          </p>
+          <p class="estimated-time">estimated time</p>
+          <p class="time">{{ item.estimatedTime }}</p>
+        </div>
+      </div>
+    </drag-scroll>
+
+    <drag-scroll *ngIf="carouselChoice === 'BUSINESS'" #nav class="drag-scroll">
+      <div
+        drag-scroll-item
+        *ngFor="let item of business"
+        class="card"
+        [class]="item.class"
+      >
+        <div class="card-header">
+          <span
+            class="card"
+            [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+            >{{ item.state }}</span
+          >
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ item.title }}</h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                *ngFor="let star of item.stars"
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div
+                [class]="
+                  item.difficulty === 'Beginner'
+                    ? 'bar bar-two empty'
+                    : 'bar bar-two'
+                "
+              ></div>
+              <div
+                [class]="
+                  item.difficulty === 'Advanced'
+                    ? 'bar bar-three'
+                    : 'bar bar-three empty'
+                "
+              ></div> </span
+            ><span class="difficulty">{{ item.difficulty }}</span>
+          </p>
+          <p class="estimated-time">estimated time</p>
+          <p class="time">{{ item.estimatedTime }}</p>
+        </div>
+      </div>
+    </drag-scroll>
+
+    <drag-scroll
+      *ngIf="carouselChoice === 'AUTONOMOUS_VEHICLES'"
+      #nav
+      class="drag-scroll"
+    >
+      <div
+        drag-scroll-item
+        *ngFor="let item of autonomousVehicles"
+        class="card"
+        [class]="item.class"
+      >
+        <div class="card-header">
+          <span
+            class="card"
+            [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+            >{{ item.state }}</span
+          >
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ item.title }}</h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                *ngFor="let star of item.stars"
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div
+                [class]="
+                  item.difficulty === 'Beginner'
+                    ? 'bar bar-two empty'
+                    : 'bar bar-two'
+                "
+              ></div>
+              <div
+                [class]="
+                  item.difficulty === 'Advanced'
+                    ? 'bar bar-three'
+                    : 'bar bar-three empty'
+                "
+              ></div> </span
+            ><span class="difficulty">{{ item.difficulty }}</span>
+          </p>
+          <p class="estimated-time">estimated time</p>
+          <p class="time">{{ item.estimatedTime }}</p>
+        </div>
+      </div>
+    </drag-scroll>
+
+    <drag-scroll
+      *ngIf="carouselChoice === 'CLOUD_COMPUTING'"
+      #nav
+      class="drag-scroll"
+    >
+      <div
+        drag-scroll-item
+        *ngFor="let item of cloudComputing"
+        class="card"
+        [class]="item.class"
+      >
+        <div class="card-header">
+          <span
+            class="card"
+            [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+            >{{ item.state }}</span
+          >
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ item.title }}</h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                *ngFor="let star of item.stars"
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div
+                [class]="
+                  item.difficulty === 'Beginner'
+                    ? 'bar bar-two empty'
+                    : 'bar bar-two'
+                "
+              ></div>
+              <div
+                [class]="
+                  item.difficulty === 'Advanced'
+                    ? 'bar bar-three'
+                    : 'bar bar-three empty'
+                "
+              ></div> </span
+            ><span class="difficulty">{{ item.difficulty }}</span>
+          </p>
+          <p class="estimated-time">estimated time</p>
+          <p class="time">{{ item.estimatedTime }}</p>
+        </div>
+      </div>
+    </drag-scroll>
+
     <fa-icon
       *ngIf="viewport !== 'xs' && viewport !== 'small' && viewport !== 'medium'"
       [icon]="faCaretRight"

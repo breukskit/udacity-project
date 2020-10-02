@@ -10,7 +10,15 @@ import { Store, select } from '@ngrx/store';
 import { State } from '../../../../store/reducers';
 import { selectSize } from '../../../../store/selectors';
 import { Observable } from 'rxjs';
-import { CHOICES, DATA_SCIENCE, PROGRAMMING } from './carousel-choices';
+import {
+  CHOICES,
+  DATA_SCIENCE,
+  PROGRAMMING,
+  ARTIFICIAL_INTELLIGENCE,
+  BUSINESS,
+  AUTONOMOUS_VEHICLES,
+  CLOUD_COMPUTING_CAROUSEL,
+} from './carousel-choices';
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -51,6 +59,10 @@ export class CarouselComponent implements OnInit {
   choices = CHOICES;
   dataScience = DATA_SCIENCE;
   programming = PROGRAMMING;
+  artificialIntelligence = ARTIFICIAL_INTELLIGENCE;
+  business = BUSINESS;
+  autonomousVehicles = AUTONOMOUS_VEHICLES;
+  cloudComputing = CLOUD_COMPUTING_CAROUSEL;
 
   ngOnInit(): void {
     this.viewPort$ = this.store.pipe(select(selectSize));
