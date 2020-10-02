@@ -222,7 +222,7 @@ export const BUSINESS = [
     state: 'popular',
     title: 'Business Analytics',
     stars: ['full', 'full', 'full', 'full', 'half'],
-    difficulty: 'Beginner',
+    difficulty: 'Intermediate',
     estimatedTime: '3 months at 5-10 hrs/week',
   },
   {
@@ -238,7 +238,7 @@ export const BUSINESS = [
     state: 'new',
     title: 'SQL',
     stars: ['full', 'full', 'full', 'full', 'half'],
-    difficulty: 'Beginner',
+    difficulty: 'Advanced',
     estimatedTime: '3 months at 5-10 hrs/week',
   },
 ];

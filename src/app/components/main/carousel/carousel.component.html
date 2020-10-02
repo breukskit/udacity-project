@@ -1,6 +1,10 @@
 <section class="carousel">
   <h2 class="header">Explore our schools to find your perfect program</h2>
-  <ul class="carousel-picker">
+  <ul
+    *ngIf="viewport !== 'xs' && viewport !== 'small'"
+    name="fullsize"
+    class="carousel-picker"
+  >
     <li
       class="carousel-choice"
       *ngFor="let choice of choices"
@@ -11,7 +15,424 @@
       </p>
     </li>
   </ul>
-  <div class="carousel-container">
+  <ul
+    *ngIf="viewport !== 'xl' && viewport !== 'large' && viewport !== 'medium'"
+    name="mobile"
+    class="mobile-carousel-picker"
+  >
+    <li
+      class="mobile-carousel-choice"
+      (click)="mobileSetCarousel('DATA_SCIENCE')"
+    >
+      <div class="choice-top">
+        <span>Data Science</span>
+        <span
+          ><fa-icon
+            [icon]="carouselChoice === 'DATA_SCIENCE' ? faMinus : faPlus"
+            [styles]="{ stroke: '#02B3E4', color: '#02B3E4' }"
+          ></fa-icon
+        ></span>
+      </div>
+      <drag-scroll
+        *ngIf="carouselChoice === 'DATA_SCIENCE'"
+        #nav
+        class="drag-scroll"
+      >
+        <div
+          drag-scroll-item
+          *ngFor="let item of dataScience"
+          class="card"
+          [class]="item.class"
+        >
+          <div class="card-header">
+            <span
+              class="card"
+              [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+              >{{ item.state }}</span
+            >
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ item.title }}</h4>
+            <p class="card-data">
+              <span class="stars">
+                <fa-icon
+                  *ngFor="let star of item.stars"
+                  class="card-star-icon"
+                  [icon]="faStar"
+                  [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                  size="xs"
+                ></fa-icon>
+              </span>
+              <span>4.6 (736)</span>
+              <span class="bars">
+                <div class="bar bar-one"></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Beginner'
+                      ? 'bar bar-two empty'
+                      : 'bar bar-two'
+                  "
+                ></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Advanced'
+                      ? 'bar bar-three'
+                      : 'bar bar-three empty'
+                  "
+                ></div> </span
+              ><span class="difficulty">{{ item.difficulty }}</span>
+            </p>
+            <p class="estimated-time">estimated time</p>
+            <p class="time">{{ item.estimatedTime }}</p>
+          </div>
+        </div>
+      </drag-scroll>
+    </li>
+    <li
+      class="mobile-carousel-choice"
+      (click)="mobileSetCarousel('PROGRAMMING')"
+    >
+      <div class="choice-top">
+        <span>Programming</span>
+        <span>
+          <fa-icon
+            [icon]="carouselChoice === 'PROGRAMMING' ? faMinus : faPlus"
+            [styles]="{ stroke: '#02B3E4', color: '#02B3E4' }"
+          ></fa-icon>
+        </span>
+      </div>
+      <drag-scroll
+        *ngIf="carouselChoice === 'PROGRAMMING'"
+        #nav
+        class="drag-scroll"
+      >
+        <div
+          drag-scroll-item
+          *ngFor="let item of programming"
+          class="card"
+          [class]="item.class"
+        >
+          <div class="card-header">
+            <span
+              class="card"
+              [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+              >{{ item.state }}</span
+            >
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ item.title }}</h4>
+            <p class="card-data">
+              <span class="stars">
+                <fa-icon
+                  *ngFor="let star of item.stars"
+                  class="card-star-icon"
+                  [icon]="faStar"
+                  [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                  size="xs"
+                ></fa-icon>
+              </span>
+              <span>4.6 (736)</span>
+              <span class="bars">
+                <div class="bar bar-one"></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Beginner'
+                      ? 'bar bar-two empty'
+                      : 'bar bar-two'
+                  "
+                ></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Advanced'
+                      ? 'bar bar-three'
+                      : 'bar bar-three empty'
+                  "
+                ></div> </span
+              ><span class="difficulty">{{ item.difficulty }}</span>
+            </p>
+            <p class="estimated-time">estimated time</p>
+            <p class="time">{{ item.estimatedTime }}</p>
+          </div>
+        </div>
+      </drag-scroll>
+    </li>
+    <li
+      class="mobile-carousel-choice"
+      (click)="mobileSetCarousel('ARTIFICIAL_INTELLIGENCE')"
+    >
+      <div class="choice-top">
+        <span>Artificial Intelligence</span>
+        <span>
+          <fa-icon
+            [icon]="
+              carouselChoice === 'ARTIFICIAL_INTELLIGENCE' ? faMinus : faPlus
+            "
+            [styles]="{ stroke: '#02B3E4', color: '#02B3E4' }"
+          ></fa-icon>
+        </span>
+      </div>
+      <drag-scroll
+        *ngIf="carouselChoice === 'ARTIFICIAL_INTELLIGENCE'"
+        #nav
+        class="drag-scroll"
+      >
+        <div
+          drag-scroll-item
+          *ngFor="let item of artificialIntelligence"
+          class="card"
+          [class]="item.class"
+        >
+          <div class="card-header">
+            <span
+              class="card"
+              [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+              >{{ item.state }}</span
+            >
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ item.title }}</h4>
+            <p class="card-data">
+              <span class="stars">
+                <fa-icon
+                  *ngFor="let star of item.stars"
+                  class="card-star-icon"
+                  [icon]="faStar"
+                  [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                  size="xs"
+                ></fa-icon>
+              </span>
+              <span>4.6 (736)</span>
+              <span class="bars">
+                <div class="bar bar-one"></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Beginner'
+                      ? 'bar bar-two empty'
+                      : 'bar bar-two'
+                  "
+                ></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Advanced'
+                      ? 'bar bar-three'
+                      : 'bar bar-three empty'
+                  "
+                ></div> </span
+              ><span class="difficulty">{{ item.difficulty }}</span>
+            </p>
+            <p class="estimated-time">estimated time</p>
+            <p class="time">{{ item.estimatedTime }}</p>
+          </div>
+        </div>
+      </drag-scroll>
+    </li>
+    <li class="mobile-carousel-choice" (click)="mobileSetCarousel('BUSINESS')">
+      <div class="choice-top">
+        <span>Business</span>
+        <span>
+          <fa-icon
+            [icon]="carouselChoice === 'BUSINESS' ? faMinus : faPlus"
+            [styles]="{ stroke: '#02B3E4', color: '#02B3E4' }"
+          ></fa-icon>
+        </span>
+      </div>
+      <drag-scroll
+        *ngIf="carouselChoice === 'BUSINESS'"
+        #nav
+        class="drag-scroll"
+      >
+        <div
+          drag-scroll-item
+          *ngFor="let item of business"
+          class="card"
+          [class]="item.class"
+        >
+          <div class="card-header">
+            <span
+              class="card"
+              [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+              >{{ item.state }}</span
+            >
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ item.title }}</h4>
+            <p class="card-data">
+              <span class="stars">
+                <fa-icon
+                  *ngFor="let star of item.stars"
+                  class="card-star-icon"
+                  [icon]="faStar"
+                  [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                  size="xs"
+                ></fa-icon>
+              </span>
+              <span>4.6 (736)</span>
+              <span class="bars">
+                <div class="bar bar-one"></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Beginner'
+                      ? 'bar bar-two empty'
+                      : 'bar bar-two'
+                  "
+                ></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Advanced'
+                      ? 'bar bar-three'
+                      : 'bar bar-three empty'
+                  "
+                ></div> </span
+              ><span class="difficulty">{{ item.difficulty }}</span>
+            </p>
+            <p class="estimated-time">estimated time</p>
+            <p class="time">{{ item.estimatedTime }}</p>
+          </div>
+        </div>
+      </drag-scroll>
+    </li>
+    <li
+      class="mobile-carousel-choice"
+      (click)="mobileSetCarousel('AUTONOMOUS_VEHICLES')"
+    >
+      <div class="choice-top">
+        <span>Autonomous Vehicles</span>
+        <span>
+          <fa-icon
+            [icon]="carouselChoice === 'AUTONOMOUS_VEHICLES' ? faMinus : faPlus"
+            [styles]="{ stroke: '#02B3E4', color: '#02B3E4' }"
+          ></fa-icon>
+        </span>
+      </div>
+      <drag-scroll
+        *ngIf="carouselChoice === 'AUTONOMOUS_VEHICLES'"
+        #nav
+        class="drag-scroll"
+      >
+        <div
+          drag-scroll-item
+          *ngFor="let item of autonomousVehicles"
+          class="card"
+          [class]="item.class"
+        >
+          <div class="card-header">
+            <span
+              class="card"
+              [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+              >{{ item.state }}</span
+            >
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ item.title }}</h4>
+            <p class="card-data">
+              <span class="stars">
+                <fa-icon
+                  *ngFor="let star of item.stars"
+                  class="card-star-icon"
+                  [icon]="faStar"
+                  [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                  size="xs"
+                ></fa-icon>
+              </span>
+              <span>4.6 (736)</span>
+              <span class="bars">
+                <div class="bar bar-one"></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Beginner'
+                      ? 'bar bar-two empty'
+                      : 'bar bar-two'
+                  "
+                ></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Advanced'
+                      ? 'bar bar-three'
+                      : 'bar bar-three empty'
+                  "
+                ></div> </span
+              ><span class="difficulty">{{ item.difficulty }}</span>
+            </p>
+            <p class="estimated-time">estimated time</p>
+            <p class="time">{{ item.estimatedTime }}</p>
+          </div>
+        </div>
+      </drag-scroll>
+    </li>
+    <li
+      class="mobile-carousel-choice"
+      (click)="mobileSetCarousel('CLOUD_COMPUTING')"
+    >
+      <div class="choice-top">
+        <span>Cloud Computing</span>
+        <span>
+          <fa-icon
+            [icon]="carouselChoice === 'CLOUD_COMPUTING' ? faMinus : faPlus"
+            [styles]="{ stroke: '#02B3E4', color: '#02B3E4' }"
+          ></fa-icon>
+        </span>
+      </div>
+      <drag-scroll
+        *ngIf="carouselChoice === 'CLOUD_COMPUTING'"
+        #nav
+        class="drag-scroll"
+      >
+        <div
+          drag-scroll-item
+          *ngFor="let item of cloudComputing"
+          class="card"
+          [class]="item.class"
+        >
+          <div class="card-header">
+            <span
+              class="card"
+              [class]="item.state === 'top rated' ? 'top-rated' : item.state"
+              >{{ item.state }}</span
+            >
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ item.title }}</h4>
+            <p class="card-data">
+              <span class="stars">
+                <fa-icon
+                  *ngFor="let star of item.stars"
+                  class="card-star-icon"
+                  [icon]="faStar"
+                  [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                  size="xs"
+                ></fa-icon>
+              </span>
+              <span>4.6 (736)</span>
+              <span class="bars">
+                <div class="bar bar-one"></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Beginner'
+                      ? 'bar bar-two empty'
+                      : 'bar bar-two'
+                  "
+                ></div>
+                <div
+                  [class]="
+                    item.difficulty === 'Advanced'
+                      ? 'bar bar-three'
+                      : 'bar bar-three empty'
+                  "
+                ></div> </span
+              ><span class="difficulty">{{ item.difficulty }}</span>
+            </p>
+            <p class="estimated-time">estimated time</p>
+            <p class="time">{{ item.estimatedTime }}</p>
+          </div>
+        </div>
+      </drag-scroll>
+    </li>
+  </ul>
+  <div
+    name="fullsize"
+    *ngIf="viewport !== 'xs' && viewport !== 'small'"
+    class="carousel-container"
+  >
     <fa-icon
       *ngIf="viewport !== 'xs' && viewport !== 'small' && viewport !== 'medium'"
       [icon]="faCaretLeft"
@@ -355,268 +776,3 @@
     ></fa-icon>
   </div>
 </section>
-
-<!-- <div drag-scroll-item class="card data-science-1">
-        <div class="card-header"><span class="card-new">new</span></div>
-        <div class="card-body">
-          <h4 class="card-title">Data Engineer</h4>
-          <p class="card-data">
-            <span class="stars">
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStarHalfAlt"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              ></fa-icon>
-            </span>
-            <span>4.6 (736)</span>
-            <span class="bars">
-              <div class="bar bar-one"></div>
-              <div class="bar bar-two"></div>
-              <div class="bar bar-three empty"></div> </span
-            ><span class="difficulty">Intermediate</span>
-          </p>
-          <p class="estimated-time">Estimated Time</p>
-          <p class="time">5 months at 5-10 hrs/week</p>
-        </div>
-      </div>
-      <div drag-scroll-item class="card data-science-2">
-        <div class="card-header"><span class="card-popular">popular</span></div>
-        <div class="card-body">
-          <h4 class="card-title">Data Analyst</h4>
-          <p class="card-data">
-            <span class="stars">
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStarHalfAlt"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              ></fa-icon>
-            </span>
-            <span>4.6 (736)</span>
-            <span class="bars">
-              <div class="bar bar-one"></div>
-              <div class="bar bar-two"></div>
-              <div class="bar bar-three empty"></div> </span
-            ><span class="difficulty">Intermediate</span>
-          </p>
-          <p class="estimated-time">Estimated Time</p>
-          <p class="time">4 months at 5-10 hrs/week</p>
-        </div>
-      </div>
-      <div drag-scroll-item class="card data-science-3">
-        <div class="card-header"><span class="card-popular">new</span></div>
-        <div class="card-body">
-          <h4 class="card-title">Data Scientist</h4>
-          <p class="card-data">
-            <span class="stars">
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStarHalfAlt"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              ></fa-icon>
-            </span>
-            <span>4.6 (736)</span>
-            <span class="bars">
-              <div class="bar bar-one"></div>
-              <div class="bar bar-two"></div>
-              <div class="bar bar-three"></div> </span
-            ><span class="difficulty">Advanced</span>
-          </p>
-          <p class="estimated-time">Estimated Time</p>
-          <p class="time">4 months at 5-10 hrs/week</p>
-        </div>
-      </div>
-      <div drag-scroll-item class="card data-science-4">
-        <div class="card-header"><span class="card-new">new</span></div>
-        <div class="card-body">
-          <h4 class="card-title">Data Product Manager</h4>
-          <p class="card-data">
-            <span class="stars">
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStarHalfAlt"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              ></fa-icon>
-            </span>
-            <span>4.6 (736)</span>
-            <span class="bars">
-              <div class="bar bar-one"></div>
-              <div class="bar bar-two"></div>
-              <div class="bar bar-three"></div> </span
-            ><span class="difficulty">Advanced</span>
-          </p>
-          <p class="estimated-time">Estimated Time</p>
-          <p class="time">5 months at 5-10 hrs/week</p>
-        </div>
-      </div>
-      <div drag-scroll-item class="card data-science-5">
-        <div class="card-header">
-          <span class="card-top-rated">top rated</span>
-        </div>
-        <div class="card-body">
-          <h4 style="white-space: normal" class="card-title">
-            Data Science w. Python
-          </h4>
-          <p class="card-data">
-            <span class="stars">
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStar"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              >
-              </fa-icon>
-              <fa-icon
-                class="card-star-icon"
-                [icon]="faStarHalfAlt"
-                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
-                size="xs"
-              ></fa-icon>
-            </span>
-            <span>4.6 (736)</span>
-            <span class="bars">
-              <div class="bar bar-one"></div>
-              <div class="bar bar-two"></div>
-              <div class="bar bar-three"></div> </span
-            ><span class="difficulty">Advanced</span>
-          </p>
-          <p class="estimated-time">Estimated Time</p>
-          <p class="time">3 months at 5-10 hrs/week</p>
-        </div>
-      </div> -->

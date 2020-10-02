@@ -8,6 +8,28 @@
     color: #2e3d49;
     font-size: 28px;
     margin-bottom: 2rem;
+    @media (max-width: 766px) {
+      max-width: 90%;
+      margin: auto;
+      font-size: 20px;
+      margin-bottom: 1rem;
+    }
+  }
+  .mobile-carousel-picker {
+    .mobile-carousel-choice {
+      .choice-top {
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $menu-text-color;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
   .carousel-picker {
     display: flex;
@@ -37,10 +59,9 @@
     @media (max-width: 991px) {
       padding: 0rem 1rem;
     }
-    .drag-scroll {
-      @import "card";
-    }
   }
 }
-
+.drag-scroll {
+  @import "card";
+}
 @import "backgrounds";

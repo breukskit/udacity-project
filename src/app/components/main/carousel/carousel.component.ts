@@ -5,6 +5,8 @@ import {
   faCaretRight,
   faStar,
   faStarHalfAlt,
+  faPlus,
+  faMinus,
 } from '@fortawesome/free-solid-svg-icons';
 import { Store, select } from '@ngrx/store';
 import { State } from '../../../../store/reducers';
@@ -31,6 +33,8 @@ export class CarouselComponent implements OnInit {
   faCaretRight = faCaretRight;
   faStar = faStar;
   faStarHalfAlt = faStarHalfAlt;
+  faPlus = faPlus;
+  faMinus = faMinus;
 
   moveLeft() {
     this.ds.moveLeft();
@@ -52,6 +56,13 @@ export class CarouselComponent implements OnInit {
   setCarousel(choice: { id: string; title: string }) {
     this.carouselChoice = choice.id;
     console.log(this.carouselChoice);
+  }
+  mobileSetCarousel(choice: string) {
+    if (this.carouselChoice === choice) {
+      this.carouselChoice = '';
+    } else {
+      this.carouselChoice = choice;
+    }
   }
 
   constructor(private store: Store<State>) {}
