@@ -1,0 +1,288 @@
+<section class="carousel">
+  <h2 class="header">Explore our schools to find your perfect program</h2>
+  <ul class="carousel-picker">
+    <li class="carousel-choice" *ngFor="let choice of choices">
+      {{ choice.title }}
+    </li>
+  </ul>
+  <div class="carousel-container">
+    <fa-icon
+      *ngIf="viewport !== 'xs' && viewport !== 'small' && viewport !== 'medium'"
+      [icon]="faCaretLeft"
+      [styles]="{ stroke: '#02B3E4', color: '#02B3E4' }"
+      size="3x"
+      class="arrow"
+      (click)="moveLeft()"
+    ></fa-icon>
+    <drag-scroll #nav class="drag-scroll">
+      <div drag-scroll-item class="card data-science-1">
+        <div class="card-header"><span class="card-new">new</span></div>
+        <div class="card-body">
+          <h4 class="card-title">Data Engineer</h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStarHalfAlt"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div class="bar bar-two"></div>
+              <div class="bar bar-three empty"></div></span
+            ><span class="difficulty">Intermediate</span>
+          </p>
+          <p class="estimated-time">Estimated Time</p>
+          <p class="time">5 months at 5-10 hrs/week</p>
+        </div>
+      </div>
+      <div drag-scroll-item class="card data-science-2">
+        <div class="card-header"><span class="card-popular">popular</span></div>
+        <div class="card-body">
+          <h4 class="card-title">Data Analyst</h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStarHalfAlt"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div class="bar bar-two"></div>
+              <div class="bar bar-three empty"></div> </span
+            ><span class="difficulty">Intermediate</span>
+          </p>
+          <p class="estimated-time">Estimated Time</p>
+          <p class="time">4 months at 5-10 hrs/week</p>
+        </div>
+      </div>
+      <div drag-scroll-item class="card data-science-3">
+        <div class="card-header"><span class="card-popular">new</span></div>
+        <div class="card-body">
+          <h4 class="card-title">Data Scientist</h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStarHalfAlt"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div class="bar bar-two"></div>
+              <div class="bar bar-three"></div> </span
+            ><span class="difficulty">Advanced</span>
+          </p>
+          <p class="estimated-time">Estimated Time</p>
+          <p class="time">4 months at 5-10 hrs/week</p>
+        </div>
+      </div>
+      <div drag-scroll-item class="card data-science-4">
+        <div class="card-header"><span class="card-new">new</span></div>
+        <div class="card-body">
+          <h4 class="card-title">Data Product Manager</h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStarHalfAlt"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div class="bar bar-two"></div>
+              <div class="bar bar-three"></div> </span
+            ><span class="difficulty">Advanced</span>
+          </p>
+          <p class="estimated-time">Estimated Time</p>
+          <p class="time">5 months at 5-10 hrs/week</p>
+        </div>
+      </div>
+      <div drag-scroll-item class="card data-science-5">
+        <div class="card-header">
+          <span class="card-top-rated">top rated</span>
+        </div>
+        <div class="card-body">
+          <h4 style="white-space: normal" class="card-title">
+            Data Science w. Python
+          </h4>
+          <p class="card-data">
+            <span class="stars">
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStar"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              >
+              </fa-icon>
+              <fa-icon
+                class="card-star-icon"
+                [icon]="faStarHalfAlt"
+                [styles]="{ stroke: '#ECC81A', color: '#ECC81A' }"
+                size="xs"
+              ></fa-icon>
+            </span>
+            <span>4.6 (736)</span>
+            <span class="bars">
+              <div class="bar bar-one"></div>
+              <div class="bar bar-two"></div>
+              <div class="bar bar-three"></div> </span
+            ><span class="difficulty">Advanced</span>
+          </p>
+          <p class="estimated-time">Estimated Time</p>
+          <p class="time">3 months at 5-10 hrs/week</p>
+        </div>
+      </div>
+    </drag-scroll>
+    <fa-icon
+      *ngIf="viewport !== 'xs' && viewport !== 'small' && viewport !== 'medium'"
+      [icon]="faCaretRight"
+      [styles]="{ stroke: '#02B3E4', color: '#02B3E4' }"
+      size="3x"
+      class="arrow"
+      (click)="moveRight()"
+    ></fa-icon>
+  </div>
+</section>

@@ -16,6 +16,8 @@ import { ProgramsDropdownComponent } from './components/nav/programs-dropdown/pr
 import { BurgerSidenavComponent } from './components/nav/burger-sidenav/burger-sidenav.component';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/main/header/header.component';
+import { CarouselComponent } from './components/main/carousel/carousel.component';
+import { DragScrollModule } from 'ngx-drag-scroll';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { HeaderComponent } from './components/main/header/header.component';
     BurgerSidenavComponent,
     MainComponent,
     HeaderComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { HeaderComponent } from './components/main/header/header.component';
       logOnly: environment.production,
     }),
     FontAwesomeModule,
+    DragScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
