@@ -11,6 +11,18 @@
   }
   .carousel-picker {
     display: flex;
+    padding: 0rem 2rem 2rem 2rem;
+    justify-content: space-around;
+    .carousel-choice {
+      text-align: center;
+      margin: 0rem 0.5rem 0rem 0.5rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .selected {
+      border-bottom: 2px solid #02b3e4;
+    }
   }
   .arrow {
     padding: 1.5rem;
@@ -31,28 +43,4 @@
   }
 }
 
-.data-science-1 {
-  .card-header {
-    background-image: url("~src/assets/carousel-img/data-science/data_engineer_catalog_image.jpg");
-  }
-}
-.data-science-2 {
-  .card-header {
-    background-image: url("~src/assets/carousel-img/data-science/data_analyst_catalog_image.jpg");
-  }
-}
-.data-science-3 {
-  .card-header {
-    background-image: url("~src/assets/carousel-img/data-science/data_scientist_catalog_image.jpg");
-  }
-}
-.data-science-4 {
-  .card-header {
-    background-image: url("~src/assets/carousel-img/data-science/catalog_image_nd030.webp");
-  }
-}
-.data-science-5 {
-  .card-header {
-    background-image: url("~src/assets/carousel-img/data-science/Programming_for_Data_Science_with_R_-_catalog_image.jpg");
-  }
-}
+@import "backgrounds";
