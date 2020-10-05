@@ -1,0 +1,92 @@
+@import "~src/sass/variables.scss";
+@import "~src/sass/utilities.scss";
+$card-text: #2e3d49;
+.benefit-cards {
+  // max-width: 1180px;
+  margin: auto;
+  padding: 2.5rem 1rem;
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: $card-text;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-size: 1.2rem;
+    color: $menu-text-color;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .card {
+      height: 18.75rem;
+      width: 17.75rem;
+      margin: 0 10px 15px 0;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 4px 0 rgba(17, 22, 26, 0.16),
+        0 2px 4px 0 rgba(17, 22, 26, 0.08), 0 4px 8px 0 rgba(17, 22, 26, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .card-title {
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: $card-text;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      .card-p {
+        font-size: 0.875rem;
+        color: $card-text;
+        padding: 0 1.25rem 1.25rem;
+        line-height: 30px;
+        font-weight: 400;
+      }
+      .card-icon {
+        margin: 2rem 0rem 1rem 0rem;
+        height: 34px;
+      }
+    }
+  }
+}
+
+.card-one {
+  border-top: 2px solid #02b3e4;
+}
+.card-two {
+  border-top: 2px solid #ffae0c;
+}
+.card-three {
+  border-top: 2px solid #15c26b;
+}
+.card-four {
+  border-top: 2px solid #9f4cdf;
+}
+
+.explore-banner {
+  max-width: 1180px;
+  margin: 0rem auto 2.5rem auto;
+  background-color: $card-text;
+  color: #ffffff;
+  text-align: center;
+  padding: 72px 24px;
+  @media (max-width: 766px) {
+    padding: 48px 16px;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    @media (max-width: 575px) {
+      font-size: 24px;
+    }
+  }
+  p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.75rem;
+  }
+}

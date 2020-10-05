@@ -18,6 +18,8 @@ import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/main/header/header.component';
 import { CarouselComponent } from './components/main/carousel/carousel.component';
 import { DragScrollModule } from 'ngx-drag-scroll';
+import { BenefitCardsComponent } from './components/main/benefit-cards/benefit-cards.component';
+import { StudentStoriesComponent } from './components/main/student-stories/student-stories.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     MainComponent,
     HeaderComponent,
     CarouselComponent,
+    BenefitCardsComponent,
+    StudentStoriesComponent,
   ],
   imports: [
     BrowserModule,
