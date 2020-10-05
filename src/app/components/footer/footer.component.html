@@ -1,0 +1,67 @@
+<footer class="footer">
+  <div class="logo-container">
+    <svg class="logo-without-text" height="30" viewBox="0 0 30 30" width="30">
+      <path
+        d="M29 .5l1 .5v13c0 5.551887-2.8897 8.695692-5.995216 10.099885L24.0094 24.1l-7.620963 4.388562c-.05877.03456-.11776.068527-.176957.101902l-.08642.049764.001806-.00254C14.48289 29.545895 12.684682 30 11 30 6 30 0 26 0 18V6l2 1v11c0 8 6 10 9 10 1.858706 0 4.86901-.76773 6.89043-3.254517C14.181726 23.872636 10 20.678703 10 14V2.2L2 7 0 6l10-6 1 .5 1 .5v13c0 6.939958 4.515283 8.612086 7.017542 8.933368C19.625786 21.62159 20 19.997902 20 18V5l2 1v12c0 1.852645-.321777 3.49077-.878395 4.91438C23.648223 22.549217 28 20.813144 28 14V2.25L22 6l-2-1 8-5 1 .5z"
+        fill="#02B3E4"
+        fill-rule="evenodd"
+      ></path>
+    </svg>
+  </div>
+  <div class="list-container">
+    <div class="list list-one">
+      <h3 class="list-title">featured programs</h3>
+      <ul>
+        <li *ngFor="let item of featuredPrograms">{{ item }}</li>
+      </ul>
+    </div>
+    <div class="one">
+      <div class="list list-two">
+        <h3 class="list-title">only at udacity</h3>
+        <ul>
+          <li *ngFor="let item of onlyAtUdacity">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="list list-three">
+        <h3 class="list-title">udacity schools</h3>
+        <ul>
+          <li *ngFor="let item of udacitySchools">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="two">
+      <div class="list list-four">
+        <h3 class="list-title">resources</h3>
+        <ul>
+          <li *ngFor="let item of resources">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="list list-five">
+        <h3 class="list-title">programs</h3>
+        <ul>
+          <li *ngFor="let item of programs">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="three">
+      <div class="list list-six">
+        <h3 class="list-title">company</h3>
+        <ul>
+          <li *ngFor="let item of company">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="list list-seven">
+        <h3 class="list-title">enterprise</h3>
+        <ul>
+          <li *ngFor="let item of enterprise">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="list list-eight">
+      <h3 class="list-title">support</h3>
+      <ul>
+        <li *ngFor="let item of support">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+</footer>

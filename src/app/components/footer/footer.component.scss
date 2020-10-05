@@ -1,0 +1,62 @@
+@import "~src/sass/utilities.scss";
+@import "~src/sass/variables.scss";
+
+.footer {
+  background-color: #f4f8f9;
+  padding: 72px 24px;
+  .logo-container {
+    background-color: transparent;
+    padding-bottom: 1.5rem;
+    max-width: 1180px;
+    margin: auto;
+  }
+  .list-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "one two three four five";
+    max-width: 1180px;
+    margin: auto;
+    .list {
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+    }
+    .list-one {
+      grid-area: one;
+    }
+    .one {
+      grid-area: two;
+    }
+    .two {
+      grid-area: three;
+    }
+    .three {
+      grid-area: four;
+    }
+    .list-eight {
+      grid-area: five;
+      padding-right: 0;
+    }
+  }
+}
+
+.list-title {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #7d97ad;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.list {
+  ul {
+    li {
+      font-size: 13px;
+      color: $menu-text-color;
+      margin-bottom: 8px;
+      &:hover {
+        cursor: pointer;
+        color: #24292d;
+      }
+    }
+  }
+}

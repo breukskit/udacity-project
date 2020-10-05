@@ -20,6 +20,7 @@ import { CarouselComponent } from './components/main/carousel/carousel.component
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { BenefitCardsComponent } from './components/main/benefit-cards/benefit-cards.component';
 import { StudentStoriesComponent } from './components/main/student-stories/student-stories.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { StudentStoriesComponent } from './components/main/student-stories/stude
     CarouselComponent,
     BenefitCardsComponent,
     StudentStoriesComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
