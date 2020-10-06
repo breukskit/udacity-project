@@ -8,12 +8,59 @@ import { PROGRAMMING_AND_DEVELOPMENT, CAREERS, ENTERPRISE } from './menus';
 import { Store, select } from '@ngrx/store';
 import { State } from '../../../store/reducers';
 import { selectSize } from '../../../store/selectors';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+
+import {
+  trigger,
+  style,
+  animate,
+  transition,
+  keyframes,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        animate(
+          '200ms ease-in-out',
+          keyframes([
+            style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+            style({
+              opacity: 0.75,
+              transform: 'translateX(-50%)',
+              offset: 0.5,
+            }),
+            style({ opacity: 1, transform: 'translateX(0%)', offset: 1.0 }),
+          ])
+        ),
+      ]),
+      transition(':leave', [
+        animate(
+          '200ms ease-out',
+          keyframes([
+            style({ opacity: 1, transform: 'translateX(0px)', offset: 0 }),
+            style({
+              opacity: 0.75,
+              transform: 'translateX(-50%)',
+              offset: 0.5,
+            }),
+            style({ opacity: 0, transform: 'translateX(-100%)', offset: 1.0 }),
+          ])
+        ),
+      ]),
+    ]),
+    trigger('enterLeave', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('100ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate('100ms', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class NavComponent implements OnInit, OnDestroy {
   faChevronDown = faChevronDown;
@@ -25,7 +72,7 @@ export class NavComponent implements OnInit, OnDestroy {
   showEnterpriseDropdown = false;
   showBurgerSidenav = false;
 
-  viewport$: Observable<string>;
+  viewport$: Subscription;
   viewport;
 
   toggleBurgerSidenav() {
@@ -59,10 +106,11 @@ export class NavComponent implements OnInit, OnDestroy {
   enterprises = ENTERPRISE;
 
   ngOnInit(): void {
-    this.viewport$ = this.store.pipe(select(selectSize));
-    this.viewport$.subscribe((value) => (this.viewport = value));
+    this.viewport$ = this.store
+      .pipe(select(selectSize))
+      .subscribe((x) => (this.viewport = x));
   }
   ngOnDestroy(): void {
-    this.viewport$.subscribe().unsubscribe();
+    this.viewport$.unsubscribe();
   }
 }

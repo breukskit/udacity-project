@@ -14,11 +14,21 @@ import { selectSize } from '../../../store/selectors';
 import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
+  animations: [
+    trigger('enterLeave', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('100ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate('100ms', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class FooterComponent implements OnInit, OnDestroy {
   sub: Subscription;

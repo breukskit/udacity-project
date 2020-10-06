@@ -64,7 +64,7 @@
             }"
           ></fa-icon>
         </div>
-        <div class="mobile-link-container" *ngIf="menus[0].show">
+        <div @enterLeave class="mobile-link-container" *ngIf="menus[0].show">
           <a class="mobile-link" *ngFor="let item of featuredPrograms">{{
             item
           }}</a>
@@ -82,7 +82,7 @@
             }"
           ></fa-icon>
         </div>
-        <div class="mobile-link-container" *ngIf="menus[1].show">
+        <div @enterLeave class="mobile-link-container" *ngIf="menus[1].show">
           <a class="mobile-link" *ngFor="let item of onlyAtUdacity">{{
             item
           }}</a>
@@ -100,7 +100,7 @@
             }"
           ></fa-icon>
         </div>
-        <div class="mobile-link-container" *ngIf="menus[2].show">
+        <div @enterLeave class="mobile-link-container" *ngIf="menus[2].show">
           <a class="mobile-link" *ngFor="let item of udacitySchools">
             {{ item }}
           </a>
@@ -118,7 +118,7 @@
             }"
           ></fa-icon>
         </div>
-        <div class="mobile-link-container" *ngIf="menus[3].show">
+        <div @enterLeave class="mobile-link-container" *ngIf="menus[3].show">
           <a class="mobile-link" *ngFor="let item of resources">
             {{ item }}
           </a>
@@ -136,7 +136,7 @@
             }"
           ></fa-icon>
         </div>
-        <div class="mobile-link-container" *ngIf="menus[4].show">
+        <div @enterLeave class="mobile-link-container" *ngIf="menus[4].show">
           <a class="mobile-link" *ngFor="let item of programs">
             {{ item }}
           </a>
@@ -154,7 +154,7 @@
             }"
           ></fa-icon>
         </div>
-        <div class="mobile-link-container" *ngIf="menus[5].show">
+        <div @enterLeave class="mobile-link-container" *ngIf="menus[5].show">
           <a class="mobile-link" *ngFor="let item of company">{{ item }}</a>
         </div>
       </li>
@@ -170,7 +170,7 @@
             }"
           ></fa-icon>
         </div>
-        <div class="mobile-link-container" *ngIf="menus[6].show">
+        <div @enterLeave class="mobile-link-container" *ngIf="menus[6].show">
           <a class="mobile-link" *ngFor="let item of enterprise">
             {{ item }}
           </a>
@@ -180,6 +180,7 @@
         <div class="list-toggler" (click)="toggleMenus('support')">
           <h3 class="mobile-list-title">support</h3>
           <fa-icon
+            @enterLeave
             [icon]="menus[7].show ? faTimes : faPlus"
             size="sm"
             [styles]="{
@@ -188,7 +189,7 @@
             }"
           ></fa-icon>
         </div>
-        <div class="mobile-link-container" *ngIf="menus[7].show">
+        <div @enterLeave class="mobile-link-container" *ngIf="menus[7].show">
           <a class="mobile-link" *ngFor="let item of support">{{ item }}</a>
         </div>
       </li>

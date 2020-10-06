@@ -33,7 +33,7 @@
                 ></fa-icon></span
             ></a>
           </div>
-          <div *ngIf="showProgramsDropdown">
+          <div @enterLeave *ngIf="showProgramsDropdown">
             <div class="dropdown-container">
               <app-programs-dropdown></app-programs-dropdown>
               <div class="program-dropdown-border"></div>
@@ -57,7 +57,7 @@
                 ></fa-icon> </span
             ></a>
           </div>
-          <div *ngIf="showCareersDropdown">
+          <div @enterLeave *ngIf="showCareersDropdown">
             <div class="dropdown-container">
               <ul class="dropdown-ul">
                 <li class="dropdown-li" *ngFor="let career of careers">
@@ -83,7 +83,7 @@
                 ></fa-icon> </span
             ></a>
           </div>
-          <div *ngIf="showEnterpriseDropdown">
+          <div @enterLeave *ngIf="showEnterpriseDropdown">
             <div class="dropdown-container">
               <ul class="dropdown-ul">
                 <li class="dropdown-li" *ngFor="let enterprise of enterprises">
@@ -119,7 +119,7 @@
     </div>
     <div class="dummy-container"></div>
   </div>
-  <div *ngIf="showBurgerSidenav" class="hamburger-sidenav">
+  <div @slideInOut *ngIf="showBurgerSidenav" class="hamburger-sidenav">
     <app-burger-sidenav
       (closeEvent)="toggleBurgerSidenav()"
     ></app-burger-sidenav>
