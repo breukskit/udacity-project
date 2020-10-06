@@ -25,7 +25,7 @@
 @for $i from 0 through 5 {
   $ratio: $i * 60px;
   @if $i > 2 {
-    $ratio: 20px + $i * 38px;
+    $ratio: 21px + $i * 38px;
   }
   @if $i == 2 {
     $ratio: 22px + $i * 38px;

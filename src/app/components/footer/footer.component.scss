@@ -11,52 +11,83 @@
     margin: auto;
   }
   .list-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: "one two three four five";
     max-width: 1180px;
     margin: auto;
     .list {
-      padding-right: 1rem;
-      padding-bottom: 1rem;
-    }
-    .list-one {
-      grid-area: one;
-    }
-    .one {
-      grid-area: two;
-    }
-    .two {
-      grid-area: three;
-    }
-    .three {
-      grid-area: four;
-    }
-    .list-eight {
-      grid-area: five;
-      padding-right: 0;
-    }
-  }
-}
-
-.list-title {
-  text-transform: uppercase;
-  font-size: 13px;
-  color: #7d97ad;
-  margin-bottom: 12px;
-  font-weight: 700;
-}
-
-.list {
-  ul {
-    li {
-      font-size: 13px;
-      color: $menu-text-color;
-      margin-bottom: 8px;
-      &:hover {
-        cursor: pointer;
-        color: #24292d;
+      display: flex;
+      justify-content: space-between;
+      .list-item {
+        display: flex;
+        flex-direction: column;
+        &:not(:nth-child(5)) {
+          padding-right: 0.5rem;
+        }
+        .list-title {
+          text-transform: uppercase;
+          font-size: 13px;
+          color: #7d97ad;
+          margin-bottom: 12px;
+          font-weight: 700;
+        }
+        .link {
+          font-size: 13px;
+          color: $menu-text-color;
+          margin-bottom: 8px;
+          &:hover {
+            cursor: pointer;
+            color: #24292d;
+          }
+        }
       }
     }
   }
+  @import "mobile";
+  .bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    @media (max-width: 575px) {
+      flex-direction: column;
+    }
+    .fineprint {
+      font-size: 13px;
+      color: $menu-text-color;
+      @media (max-width: 575px) {
+        margin-bottom: 0.5rem;
+      }
+      a {
+        margin-right: 0.4rem;
+        &:hover {
+          cursor: pointer;
+          color: #24292d;
+        }
+      }
+    }
+    .logos {
+      .bottom-logo {
+        margin-right: 0.4rem;
+        fill: #606464;
+        &:hover {
+          cursor: pointer;
+          fill: #303233;
+        }
+      }
+    }
+  }
+  .p-one,
+  .p-two {
+    font-size: 9px;
+    text-align: center;
+  }
+  .p-one {
+    margin-bottom: 1rem;
+  }
+}
+.border {
+  margin-top: 2.25rem;
+  border-bottom: 1px solid #dbe2e8;
+}
+.gutter {
+  margin-bottom: 1rem;
 }
