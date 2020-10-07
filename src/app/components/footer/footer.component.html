@@ -12,38 +12,32 @@
     <ul class="list">
       <li class="list-item">
         <h3 class="list-title">featured programs</h3>
-        <a class="link" *ngFor="let item of featuredPrograms" href="#">{{
-          item
-        }}</a>
+        <a class="link" *ngFor="let item of featuredPrograms">{{ item }}</a>
       </li>
       <li class="list-item">
         <h3 class="list-title">only at udacity</h3>
-        <a class="link" *ngFor="let item of onlyAtUdacity" href="#">{{
-          item
-        }}</a>
+        <a class="link" *ngFor="let item of onlyAtUdacity">{{ item }}</a>
         <div class="gutter"></div>
         <h3 class="list-title">udacity schools</h3>
-        <a class="link" *ngFor="let item of udacitySchools" href="#">{{
-          item
-        }}</a>
+        <a class="link" *ngFor="let item of udacitySchools">{{ item }}</a>
       </li>
       <li class="list-item">
         <h3 class="list-title">resources</h3>
-        <a class="link" *ngFor="let item of resources" href="#">{{ item }}</a>
+        <a class="link" *ngFor="let item of resources">{{ item }}</a>
         <div class="gutter"></div>
         <h3 class="list-title">programs</h3>
-        <a class="link" *ngFor="let item of programs" href="#">{{ item }}</a>
+        <a class="link" *ngFor="let item of programs">{{ item }}</a>
       </li>
       <li class="list-item">
         <h3 class="list-title">company</h3>
-        <a class="link" *ngFor="let item of company" href="#">{{ item }}</a>
+        <a class="link" *ngFor="let item of company">{{ item }}</a>
         <div class="gutter"></div>
         <h3 class="list-title">enterprise</h3>
-        <a class="link" *ngFor="let item of enterprise" href="#">{{ item }}</a>
+        <a class="link" *ngFor="let item of enterprise">{{ item }}</a>
       </li>
       <li class="list-item">
         <h3 class="list-title">support</h3>
-        <a class="link" *ngFor="let item of support" href="#">{{ item }}</a>
+        <a class="link" *ngFor="let item of support">{{ item }}</a>
       </li>
     </ul>
   </div>
@@ -56,15 +50,15 @@
         <div class="list-toggler" (click)="toggleMenus('featuredPrograms')">
           <h3 class="mobile-list-title">featured programs</h3>
           <fa-icon
-            [icon]="menus[0].show ? faTimes : faPlus"
+            [icon]="faPlus"
             size="sm"
-            [styles]="{
-              stroke: menus[0].show ? '#2E3D49' : '#C1C5C9',
-              color: menus[0].show ? '#2E3D49' : '#C1C5C9'
-            }"
+            [@openClose]="menus[0].show ? 'open' : 'closed'"
           ></fa-icon>
         </div>
-        <div @enterLeave class="mobile-link-container" *ngIf="menus[0].show">
+        <div
+          [@smoothCollapse]="menus[0].show ? 'shown' : 'hidden'"
+          class="mobile-link-container"
+        >
           <a class="mobile-link" *ngFor="let item of featuredPrograms">{{
             item
           }}</a>
@@ -74,15 +68,15 @@
         <div class="list-toggler" (click)="toggleMenus('onlyAtUdacity')">
           <h3 class="mobile-list-title">only at udacity</h3>
           <fa-icon
-            [icon]="menus[1].show ? faTimes : faPlus"
+            [icon]="faPlus"
             size="sm"
-            [styles]="{
-              stroke: menus[1].show ? '#2E3D49' : '#C1C5C9',
-              color: menus[1].show ? '#2E3D49' : '#C1C5C9'
-            }"
+            [@openClose]="menus[1].show ? 'open' : 'closed'"
           ></fa-icon>
         </div>
-        <div @enterLeave class="mobile-link-container" *ngIf="menus[1].show">
+        <div
+          [@smoothCollapse]="menus[1].show ? 'shown' : 'hidden'"
+          class="mobile-link-container"
+        >
           <a class="mobile-link" *ngFor="let item of onlyAtUdacity">{{
             item
           }}</a>
@@ -92,15 +86,15 @@
         <div class="list-toggler" (click)="toggleMenus('udacitySchools')">
           <h3 class="mobile-list-title">udacity schools</h3>
           <fa-icon
-            [icon]="menus[2].show ? faTimes : faPlus"
+            [icon]="faPlus"
             size="sm"
-            [styles]="{
-              stroke: menus[2].show ? '#2E3D49' : '#C1C5C9',
-              color: menus[2].show ? '#2E3D49' : '#C1C5C9'
-            }"
+            [@openClose]="menus[2].show ? 'open' : 'closed'"
           ></fa-icon>
         </div>
-        <div @enterLeave class="mobile-link-container" *ngIf="menus[2].show">
+        <div
+          [@smoothCollapse]="menus[2].show ? 'shown' : 'hidden'"
+          class="mobile-link-container"
+        >
           <a class="mobile-link" *ngFor="let item of udacitySchools">
             {{ item }}
           </a>
@@ -110,15 +104,15 @@
         <div class="list-toggler" (click)="toggleMenus('resources')">
           <h3 class="mobile-list-title">resources</h3>
           <fa-icon
-            [icon]="menus[3].show ? faTimes : faPlus"
+            [icon]="faPlus"
             size="sm"
-            [styles]="{
-              stroke: menus[3].show ? '#2E3D49' : '#C1C5C9',
-              color: menus[3].show ? '#2E3D49' : '#C1C5C9'
-            }"
+            [@openClose]="menus[3].show ? 'open' : 'closed'"
           ></fa-icon>
         </div>
-        <div @enterLeave class="mobile-link-container" *ngIf="menus[3].show">
+        <div
+          [@smoothCollapse]="menus[3].show ? 'shown' : 'hidden'"
+          class="mobile-link-container"
+        >
           <a class="mobile-link" *ngFor="let item of resources">
             {{ item }}
           </a>
@@ -128,15 +122,15 @@
         <div class="list-toggler" (click)="toggleMenus('programs')">
           <h3 class="mobile-list-title">programs</h3>
           <fa-icon
-            [icon]="menus[4].show ? faTimes : faPlus"
+            [icon]="faPlus"
             size="sm"
-            [styles]="{
-              stroke: menus[4].show ? '#2E3D49' : '#C1C5C9',
-              color: menus[4].show ? '#2E3D49' : '#C1C5C9'
-            }"
+            [@openClose]="menus[4].show ? 'open' : 'closed'"
           ></fa-icon>
         </div>
-        <div @enterLeave class="mobile-link-container" *ngIf="menus[4].show">
+        <div
+          [@smoothCollapse]="menus[4].show ? 'shown' : 'hidden'"
+          class="mobile-link-container"
+        >
           <a class="mobile-link" *ngFor="let item of programs">
             {{ item }}
           </a>
@@ -146,15 +140,15 @@
         <div class="list-toggler" (click)="toggleMenus('company')">
           <h3 class="mobile-list-title">company</h3>
           <fa-icon
-            [icon]="menus[5].show ? faTimes : faPlus"
+            [icon]="faPlus"
             size="sm"
-            [styles]="{
-              stroke: menus[5].show ? '#2E3D49' : '#C1C5C9',
-              color: menus[5].show ? '#2E3D49' : '#C1C5C9'
-            }"
+            [@openClose]="menus[5].show ? 'open' : 'closed'"
           ></fa-icon>
         </div>
-        <div @enterLeave class="mobile-link-container" *ngIf="menus[5].show">
+        <div
+          [@smoothCollapse]="menus[5].show ? 'shown' : 'hidden'"
+          class="mobile-link-container"
+        >
           <a class="mobile-link" *ngFor="let item of company">{{ item }}</a>
         </div>
       </li>
@@ -162,15 +156,15 @@
         <div class="list-toggler" (click)="toggleMenus('enterprise')">
           <h3 class="mobile-list-title">enterprise</h3>
           <fa-icon
-            [icon]="menus[6].show ? faTimes : faPlus"
+            [icon]="faPlus"
             size="sm"
-            [styles]="{
-              stroke: menus[6].show ? '#2E3D49' : '#C1C5C9',
-              color: menus[6].show ? '#2E3D49' : '#C1C5C9'
-            }"
+            [@openClose]="menus[6].show ? 'open' : 'closed'"
           ></fa-icon>
         </div>
-        <div @enterLeave class="mobile-link-container" *ngIf="menus[6].show">
+        <div
+          [@smoothCollapse]="menus[6].show ? 'shown' : 'hidden'"
+          class="mobile-link-container"
+        >
           <a class="mobile-link" *ngFor="let item of enterprise">
             {{ item }}
           </a>
@@ -180,16 +174,15 @@
         <div class="list-toggler" (click)="toggleMenus('support')">
           <h3 class="mobile-list-title">support</h3>
           <fa-icon
-            @enterLeave
-            [icon]="menus[7].show ? faTimes : faPlus"
+            [icon]="faPlus"
             size="sm"
-            [styles]="{
-              stroke: menus[7].show ? '#2E3D49' : '#C1C5C9',
-              color: menus[7].show ? '#2E3D49' : '#C1C5C9'
-            }"
+            [@openClose]="menus[7].show ? 'open' : 'closed'"
           ></fa-icon>
         </div>
-        <div @enterLeave class="mobile-link-container" *ngIf="menus[7].show">
+        <div
+          [@smoothCollapse]="menus[7].show ? 'shown' : 'hidden'"
+          class="mobile-link-container"
+        >
           <a class="mobile-link" *ngFor="let item of support">{{ item }}</a>
         </div>
       </li>

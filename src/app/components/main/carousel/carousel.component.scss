@@ -41,12 +41,26 @@
     .carousel-choice {
       text-align: center;
       margin: 0rem 0.5rem 0rem 0.5rem;
+      background: #ffffff;
       &:hover {
         cursor: pointer;
       }
     }
     .selected {
       border-bottom: 2px solid #02b3e4;
+      z-index: 2;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(190%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 12px solid #02b3e4;
+      }
     }
   }
   .arrow {

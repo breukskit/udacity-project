@@ -8,7 +8,7 @@ import { PROGRAMMING_AND_DEVELOPMENT, CAREERS, ENTERPRISE } from './menus';
 import { Store, select } from '@ngrx/store';
 import { State } from '../../../store/reducers';
 import { selectSize } from '../../../store/selectors';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import {
   trigger,
@@ -28,7 +28,7 @@ import {
         animate(
           '200ms ease-in-out',
           keyframes([
-            style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+            style({ opacity: 0, transform: 'translateX(-90%)', offset: 0 }),
             style({
               opacity: 0.75,
               transform: 'translateX(-50%)',
@@ -42,7 +42,7 @@ import {
         animate(
           '200ms ease-out',
           keyframes([
-            style({ opacity: 1, transform: 'translateX(0px)', offset: 0 }),
+            style({ opacity: 1, transform: 'translateX(0)', offset: 0 }),
             style({
               opacity: 0.75,
               transform: 'translateX(-50%)',

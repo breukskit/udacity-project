@@ -13,20 +13,56 @@ import { State } from '../../../store/reducers';
 import { selectSize } from '../../../store/selectors';
 import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  state,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
   animations: [
-    trigger('enterLeave', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('100ms', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [animate('100ms', style({ opacity: 0 }))]),
+    trigger('smoothCollapse', [
+      state(
+        'hidden',
+        style({
+          height: '0',
+          overflow: 'hidden',
+          opacity: '0',
+          visibility: 'hidden',
+        })
+      ),
+      state(
+        'shown',
+        style({
+          overflow: 'hidden',
+        })
+      ),
+      transition('hidden<=>shown', animate('250ms')),
+    ]),
+    trigger('openClose', [
+      state(
+        'closed',
+        style({
+          transform: 'rotate(0deg)',
+          color: '#C1C5C9',
+          stroke: '#C1C5C9',
+        })
+      ),
+      state(
+        'open',
+        style({
+          transform: 'rotate(45deg)',
+          color: '#2E3D49',
+          stroke: '#2E3D49',
+        })
+      ),
+      transition('closed<=>open', animate('250ms')),
     ]),
   ],
 })
@@ -35,7 +71,6 @@ export class FooterComponent implements OnInit, OnDestroy {
   viewPort: string;
 
   faPlus = faPlus;
-  faTimes = faTimes;
   toggleMenus(menu: string) {
     this.menus.forEach((item) => {
       if (item.id === menu) {
